@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Carta Animada con Flores y Canción</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo de flores animadas -->
+    <div class="flora">
+        <img src="img/vecteezy_ai-generated-gerbera-flower-isolated-on-transparent_35878785.png" alt="Flor 1">
+        
+    </div>
+
+    <!-- Carta -->
+    <div class="carta">
+        <div class="tapa" id="abrirCarta">
+            💌 con mucho amor, haz click aqui
+        </div>
+        <div class="contenido" id="contenidoCarta">
+            <p>cochita,
+
+                Hoy me siento con el corazón lleno de palabras que necesitan salir, aunque no sé si algún día llegarán a ti. A veces, el amor no es suficiente cuando uno mismo no está bien, y eso fue lo más duro de aceptar. Alejarme de ti no fue una decisión fácil, ni algo que mi corazón quisiera; fue algo que sentí necesario para encontrarme, para sanar, para poder volver a ser yo.
+                
+                No hay un solo día en el que no te piense. Estás presente en los pequeños detalles, en los recuerdos que me hacen sonreír y en los silencios que me hacen extrañarte. Me duele tu ausencia, pero más me dolería arrastrarte conmigo por caminos que aún estoy aprendiendo a recorrer solo.
+                
+                A veces me consuela pensar que si el amor entre nosotros fue verdadero, el destino sabrá guiarnos de nuevo el uno al otro cuando estemos listos. No pido promesas ni espero que pauses tu vida por mí. Solo deseo que seas feliz, que encuentres paz, y que nunca dudes de lo que significaste para mí.
+                
+                Ojalá la vida nos dé otra oportunidad, en otro tiempo, con menos heridas y más certezas. Mientras tanto, te llevo conmigo, en cada paso, con gratitud, con amor y con la esperanza —por más loca que parezca— de que tal vez, en algún rincón del futuro, nuestros caminos vuelvan a cruzarse.
+                
+                Con todo mi amor,
+                juani</p>
+        </div>
+    </div>
+
+    <!-- Música -->
+    <audio id="audio" loop>
+        <source src="audio/Bradley_Cooper_Lady_Gaga_-_In_The_Shallow_CeeNaija.com_.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio.
+    </audio>
+
+    <!-- Script -->
+    <script>
+        // Abrir carta
+        document.getElementById('abrirCarta').addEventListener('click', function () {
+            document.getElementById('contenidoCarta').classList.add('mostrar');
+            // Intentar reproducir audio
+            const audio = document.getElementById("audio");
+            audio.play().catch(err => {
+                console.log("Autoplay bloqueado, el usuario debe interactuar.");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3d1d1;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Animación de flores */
+@keyframes flor {
+    0% { transform: rotate(0deg) scale(0.8); opacity: 0.5; }
+    50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+    100% { transform: rotate(360deg) scale(0.8); opacity: 0.5; }
+}
+
+/* Flores animadas de fondo */
+.flora {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.flora img {
+    position: absolute;
+    animation: flor 10s infinite ease-in-out;
+}
+.flora img:nth-child(1) { width: 1000px; left: 1000%; animation-delay: 0s; }
+.flora img:nth-child(2) { width: 1000px; left: 1000%; animation-delay: 2s; }
+.flora img:nth-child(3) { width: 1000px; left: 1000%; animation-delay: 4s; }
+.flora img:nth-child(4) { width: 1000px; left: 1000%; animation-delay: 6s; }
+.flora img:nth-child(5) { width: 1000px; left: 1000%; animation-delay: 8s; }
+
+/* Carta */
+.carta {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Tapa */
+.tapa {
+    background-color: #ff4d88;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.5s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.tapa:hover {
+    transform: scale(1.05);
+}
+
+/* Contenido */
+.contenido {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 2px dashed #161616;
+    border-radius: 10px;
+    animation: aparecer 1s ease-out;
+}
+.contenido.mostrar {
+    display: block;
+}
+.contenido p {
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.6;
+    white-space: pre-line;
+    text-align: justify;
+}
+
+/* Animación de la carta */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
